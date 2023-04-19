@@ -1,0 +1,29 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/forms.css" />
+<%- include('../partials/nav') %>
+<main>
+  <h1><%= title %></h1>
+  <form id="new-form" action="/games" method="POST">
+    <label for="name-input">Name:</label>
+    <input type="text" name="title" id="title-input">
+    <label for="release-year-input">Release Year:</label>
+    <input type="text" name="releaseYear" id="release-year-input">
+    <label for="rating-select">Rating:</label>
+    <select name="rating" id="rating-select">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+    <label for="completed-checkbox">Completed?</label>
+    <input type="checkbox" name="completed" id="completed-checkbox" checked>
+    <button type="submit">Add Game</button>
+  </form>
+</main>
+<%- include("../partials/footer") %>

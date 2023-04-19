@@ -1,0 +1,56 @@
+ul {
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  font-weight: bold;
+}
+
+table {
+  font-size: 20px;
+}
+
+table thead th {
+  padding: 5px;
+  border-bottom: 2px solid #424748;
+}
+
+table td {
+  padding: 10px;
+  text-align: center;
+}
+
+form * {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+section {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 16px;
+}
+
+section div:nth-child(even) {
+  font-weight: bold;
+}
+
+#add-review-form {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 16px;
+  margin-bottom: 20px;
+}
+
+#add-review-form > textarea {
+  width: 250px;
+}
+
+#add-review-form > button {
+  font-size: 16px;
+  width: 160px;
+  grid-column: 2 / 3;
+  margin-bottom: 24px;
+}

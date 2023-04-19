@@ -3,6 +3,7 @@
 
 <main>
   <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
+  <h2><%= title %></h2>
   <% if (user?.profile.avatar) { %>
     <div>
       <img

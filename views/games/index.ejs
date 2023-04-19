@@ -1,0 +1,38 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/index.css" />
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>Game List</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Release Year</th>
+        <th>Rating</th>
+        <th>Completed?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% games.forEach(game => { %>
+        <tr>
+          <td><%= game.title %></td>
+          <td><%= game.releaseYear %></td>
+          <td><%= game.rating %></td>
+          <td><%= game.completed ? "Yea" : "Nah"  %></td>
+          <td><a href="/games/<%= game._id %>">details</a></td>
+          <td>
+            <form
+              action="/games/<%= game._id %>?_method=DELETE"
+              method="POST"
+            >
+              <button type='submit'>X</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</main>
+
+<%- include('../partials/footer') %>

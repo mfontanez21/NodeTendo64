@@ -4,6 +4,7 @@
 </head>
 <body>
   <nav>
+    <i class="fas fa-film fa-2x"></i>
     <% if (user) { %>
       <a href="/auth/logout" class="right">
         <button type="submit">Logout</button>
@@ -20,10 +21,22 @@
         class="g_id_signin right"
         data-type="standard"
         data-size="large"
-        data-theme="outline"
+        data-theme="filled_black"
         data-text="sign_in_with"
         data-shape="rectangular"
         data-logo_alignment="left"
       ></div>
     <% } %>
+  </head>
+  <body>
+      <a 
+        href="/games/new" class=<%= title === 'Add Game' ? 'active' : '' %>
+      >
+        add game
+      <a 
+        href="/games/" class=<%= title === 'All Games' ? 'active' : '' %>
+      >
+        all games 
+      </a>
+    </nav>
   </nav>
