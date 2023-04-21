@@ -1,16 +1,28 @@
 <%- include('./partials/html-head') %>
 <%- include('./partials/nav') %>
 
-<main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-  <h2><%= title %></h2>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
+<main id="landing-container">
+  <% if (!user) { %>
+    <h1>Log in to start!</h1>
+    <div 
+      id="g_id_onload"
+      data-client_id="<%= googleClientID %>"
+      data-login_uri="/auth/google"
+      data-auto_prompt="false"
+      data-prompt_parent_id="g_id_onload"
+    ></div>
+    <div 
+      class="g_id_signin"
+      data-type="standard"
+      data-size="large"
+      data-theme="outline"
+      data-text="sign_in_with"
+      data-shape="rectangular"
+      data-logo_alignment="left"
+    ></div>
+  <% } else { %>
+    <h1>Hello</h1>
+
   <% } %>
 </main>
 
