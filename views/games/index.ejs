@@ -19,16 +19,8 @@
           <td><%= game.title %></td>
           <td><%= game.releaseYear %></td>
           <td><%= game.rating %></td>
-          <td><%= game.completed ? "Yea" : "Nah"  %></td>
+          <td><img src="../images/gameboxes/<%= game.imgName %>"></td>
           <td><a href="/games/<%= game._id %>">details</a></td>
-          <td>
-            <form
-              action="/games/<%= game._id %>?_method=DELETE"
-              method="POST"
-            >
-              <button type='submit'>X</button>
-            </form>
-          </td>
         </tr>
       <% }) %>
     </tbody>
