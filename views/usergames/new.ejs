@@ -1,0 +1,19 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/usergames.css" />
+<%- include('../partials/nav') %>
+
+<main>
+	<h1><%= title %></h1>
+  <h2>Choose a game from the list to add</h2>
+  <form id="add-game-to-list" action="/games/<%= games._id %>" method="POST">
+    <select name="gameId">
+      <% games.forEach(game => { %>
+        <%= console.log(game.title); %>
+        <option value="<%= game._id %>"><%= game.title %></option>
+      <% }) %>
+    </select>
+    <button type="submit">Add Game</button>
+  </form>
+</main>
+
+<%- include('../partials/footer') %>

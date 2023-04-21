@@ -30,7 +30,7 @@
   </head>
   <body>
       <a 
-        href="/games/new" class=<%= title === 'Add Game' ? 'active' : '' %>
+        href="/usergames/new" class=<%= title === 'Add Game' ? 'active' : '' %>
       >
         add game
       <a 
@@ -38,5 +38,11 @@
       >
         all games 
       </a>
+      
+      <a 
+      href="/usergames/" class=<%= title === 'Your Games' ? 'active' : '' %>
+    >
+      your games 
+    </a>
     </nav>
   </nav>

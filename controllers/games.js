@@ -3,7 +3,7 @@ import { Game } from "../models/game.js"
 
 function newGame(req, res){
   res.render('games/new', {
-    title: "Add Game",
+    title: "Add Game to List",
   })
 }
 
@@ -16,7 +16,7 @@ function create(req, res){
   })
   .catch(err =>{
     console.log(err)
-    res.redirect('games/')
+    res.redirect('/games/')
   })
 }
 
