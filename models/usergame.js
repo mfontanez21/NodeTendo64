@@ -5,6 +5,8 @@ const Schema = mongoose.Schema
 const commentSchema = new Schema({
   content: String,
   author: {type: Schema.Types.ObjectId, ref: "Profile"},
+  rating: { type: String, enum: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']},
+  completed: Boolean,
 })
 
 const userGameSchema = new Schema({
@@ -12,10 +14,8 @@ const userGameSchema = new Schema({
   title: { type: String, required: true},
   releaseYear: { type: Number, required: true, min: 1996, max: 2002},
   imgName: String,
-  rating: { type: String, enum: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']},
-  completed: Boolean,
   comments: [commentSchema],
-  games: {type: Schema.Types.ObjectId, ref: "Game"}
+  game: {type: Schema.Types.ObjectId, ref: "Game"},
 }, {
   timestamps: true
 })

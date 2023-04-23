@@ -5,10 +5,9 @@
 <main>
 	<h1><%= title %></h1>
   <h2>Choose a game from the list to add</h2>
-  <form id="add-game-to-list" action="/games/<%= games._id %>" method="POST">
-    <select name="gameId">
+  <form id="add-game-to-list" action="/usergames/addGameToList" method="POST">
+    <select name="game">
       <% games.forEach(game => { %>
-        <%= console.log(game.title); %>
         <option value="<%= game._id %>"><%= game.title %></option>
       <% }) %>
     </select>

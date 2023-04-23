@@ -6,11 +6,27 @@ const router = Router()
 
 router.get('/', isLoggedIn, userGamesCtrl.index)
 
-
+// localhost3000/usergames/new
 router.get('/new', isLoggedIn, userGamesCtrl.new)
 
-router.post('/', isLoggedIn, userGamesCtrl.create)
+router.get('/:usergameId', isLoggedIn, userGamesCtrl.show)
 
+router.post('/addGameToList/', isLoggedIn, userGamesCtrl.addGameToList)
+
+// localhost:3000/games/:gameId
+router.delete("/:usergameId", isLoggedIn, userGamesCtrl.delete)
+
+router.get('/:usergameId/edit', isLoggedIn, userGamesCtrl.edit)
+
+router.post('/:usergameId/comments', isLoggedIn, userGamesCtrl.addComment)
+
+router.get('/:usergameId', isLoggedIn, userGamesCtrl.show)
+
+router.get('/:usergameId/comments/:commentId/edit', isLoggedIn, userGamesCtrl.editComment)
+
+router.put('/:usergameId/comments/:commentId', isLoggedIn, userGamesCtrl.updateComment)
+
+router.delete('/:usergameId/comments/:commentId', isLoggedIn, userGamesCtrl.deleteComment)
 
 
 

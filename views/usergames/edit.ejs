@@ -1,0 +1,40 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <form action="/usergames/<%= usergame._id %>?_method=PUT" method="POST" >
+    <label for="title-input">Title:</label>
+    <input type="text" name="title" value="<%= usergame.title %>" id="title-input">
+    <label for="release-year-input">Release Year:</label>
+    <input 
+      type="text" 
+      name="releaseYear"
+      value="<%= usergame.releaseYear %>"
+      id="release-year-input"
+    >
+    <label for="rating-select">Rating</label>
+    <select name="game-rating" id="rating-select" >
+      <option value="<%= usergame.rating %>"><%= usergame.rating %></option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+    <label for="now-showing-checkbox">Completed?</label>
+    <input 
+      type="checkbox"
+      name="completed"
+      id="completed-checkbox"
+      <%= usergame.completed ? "checked" : "" %>
+    >
+  </form>
+</section>
+
+<%- include('../partials/footer') %>

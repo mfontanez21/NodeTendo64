@@ -16,9 +16,10 @@
       <% games.forEach(game => { %>
         <tr>
           <td><%= game.title %></td>
+
           <td><%= game.releaseYear %></td>
           <td><img src="../images/gameboxes/<%= game.imgName %>"></td>
-          <td><a href="/games/<%= game._id %>">details</a></td>
+          <td><a href="/usergames/<%= game._id %>">details</a></td>
         </tr>
       <% }) %>
     </tbody>
