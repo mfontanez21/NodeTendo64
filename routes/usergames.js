@@ -18,6 +18,9 @@ router.delete("/:usergameId", isLoggedIn, userGamesCtrl.delete)
 
 router.get('/:usergameId/edit', isLoggedIn, userGamesCtrl.edit)
 
+// localhost:3000/usergames/:usergameId
+router.put("/:usergameId", userGamesCtrl.update)
+
 router.post('/:usergameId/comments', isLoggedIn, userGamesCtrl.addComment)
 
 router.get('/:usergameId', isLoggedIn, userGamesCtrl.show)

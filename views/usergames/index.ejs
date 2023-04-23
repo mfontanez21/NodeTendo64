@@ -9,6 +9,8 @@
       <tr>
         <th>Title</th>
         <th>Release Year</th>
+        <th>Rating</th>
+        <th>Completed?</th>
         <th>Box Art</th>
       </tr>
     </thead>
@@ -16,8 +18,9 @@
       <% games.forEach(game => { %>
         <tr>
           <td><%= game.title %></td>
-
           <td><%= game.releaseYear %></td>
+          <td><%= game.rating %></td>
+          <td><%= game.completed %></td>
           <td><img src="../images/gameboxes/<%= game.imgName %>"></td>
           <td><a href="/usergames/<%= game._id %>">details</a></td>
         </tr>

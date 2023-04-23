@@ -3,16 +3,15 @@
 
 <main>
   <h1><%= title %></h1>
-  <form action="/usergames/<%= usergame._id %>?_method=PUT" method="POST" >
-    <label for="title-input">Title:</label>
-    <input type="text" name="title" value="<%= usergame.title %>" id="title-input">
-    <label for="release-year-input">Release Year:</label>
-    <input 
-      type="text" 
-      name="releaseYear"
-      value="<%= usergame.releaseYear %>"
-      id="release-year-input"
-    >
+  <section>
+    <div>Title: </div>
+    <div><%= usergame.title %></div>
+    <div>Release Year: </div>
+    <div><%= usergame.releaseYear %></div>
+    <div>Rating: </div>
+    <div><%= usergame.rating %></div>
+    <div>Completed? </div>
+    <div><%= usergame.completed ? 'Yea' : 'Nah' %></div>
     <label for="rating-select">Rating</label>
     <select name="game-rating" id="rating-select" >
       <option value="<%= usergame.rating %>"><%= usergame.rating %></option>
@@ -27,13 +26,14 @@
       <option value="9">9</option>
       <option value="10">10</option>
     </select>
-    <label for="now-showing-checkbox">Completed?</label>
+    <label for="completed-checkbox">Completed?</label>
     <input 
       type="checkbox"
       name="completed"
       id="completed-checkbox"
       <%= usergame.completed ? "checked" : "" %>
     >
+    <button type="submit">Save Changes</button>
   </form>
 </section>
 

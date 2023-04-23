@@ -9,7 +9,7 @@ html {
   /* height & width will now include border & padding by default
      but can be over-ridden as needed */
   box-sizing: inherit;
-  /* font-family: 'Press Start 2P', cursive; */
+  font-family: 'Press Start 2P', cursive;
 
 }
 

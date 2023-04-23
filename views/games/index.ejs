@@ -3,7 +3,7 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>Game List</h1>
+  <h1>Full Game List</h1>
   <table>
     <thead>
       <tr>
@@ -18,7 +18,6 @@
           <td><%= game.title %></td>
           <td><%= game.releaseYear %></td>
           <td><img src="../images/gameboxes/<%= game.imgName %>"></td>
-          <td><a href="/games/<%= game._id %>">details</a></td>
         </tr>
       <% }) %>
     </tbody>

@@ -15,6 +15,21 @@ function index(req, res) {
   })
 }
 
+function update(req, res) {
+  req.body.completed = !!req.body.completed
+  for (let key in req.body) {
+    if(req.body[key] === "") delete req.body[key]
+  }
+  UserGame.findByIdAndUpdate(req.params.usergameId, req.body, {new: true})
+  .then(usergame => {
+    res.redirect(`/usergames/${usergame._id}`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
+
 function newUserGame(req, res) {
   UserGame.find({owner: req.user.profile._id})
   .then(usergames =>{
@@ -78,7 +93,7 @@ function deleteGame(req, res){
 }
 
 function edit(req, res){
-  UserGame.findById(req.params.gameId)
+  UserGame.findById(req.params.usergameId)
   .then(usergame =>{
     res.render('usergames/edit', {
       usergame,
@@ -131,8 +146,9 @@ function showComment(req, res) {
 }
 
 function editComment(req, res) {
-  UserGame.findById(req.params.gameId)
+  UserGame.findById(req.params.usergameId)
   .then(usergame => {
+    console.log(req.params.gameId);
     const comment = usergame.comments.id(req.params.commentId)
     if (comment.author.equals(req.user.profile._id)) {
       res.render('usergames/editComment', {
@@ -209,5 +225,6 @@ export {
   showComment,
   editComment,
   updateComment,
-  deleteComment
+  deleteComment,
+  update,
 }
