@@ -18,9 +18,12 @@
         <button class="btn">Edit this Game</button>
       </a>
     <% } %>
-    <h2>Comments</h2>
+    <form action="/usergames/<%= usergame._id %>?_method=DELETE" method="POST">
+      <button class="btn" type="submit">Delete Game</button>
+    </form>
   <% if (user) { %>
     <h3>Add comment</h3>
+    <h2>Comments</h2>
     <form action="/usergames/<%= usergame._id %>/comments" method="POST">
       <textarea name="content"></textarea><br>
       <button>Save</button>
@@ -29,14 +32,14 @@
   <ul>
     <% usergame.comments?.forEach(comment => { %>
       <li>
-        <%= comment.content %> - <%= comment.author.name %>
+        <%= comment.content %> 
         <% if (comment.author.equals(user?.profile._id)) { %>
           <form
             action="/usergames/<%= usergame._id  %>/comments/<%= comment._id %>?_method=DELETE"
             METHOD="POST"
             class="inline"
           >
-            <button class="btn" type="submit">Delete</button>
+            <button class="btn" type="submit">Delete Comment</button>
         </form>
           <a href="/usergames/<%= usergame._id %>/comments/<%= comment._id %>/edit">
             <button class="btn">Edit Comment</button>
@@ -45,9 +48,6 @@
       </li> 
     <% }) %>
   </ul>
-  <form action="/usergames/<%= usergame._id %>?_method=DELETE" method="POST">
-    <button class="btn" type="submit">Delete Game</button>
-  </form>
   </section>
 </main>
   

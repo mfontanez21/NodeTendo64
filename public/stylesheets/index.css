@@ -33,3 +33,7 @@ table td {
 #list a:hover {
   background-color: white;
 }
+
+.red {
+  color: red
+}
