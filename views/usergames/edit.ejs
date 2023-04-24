@@ -3,6 +3,11 @@
 
 <main>
   <h1><%= title %></h1>
+  <form
+    id="new-form"
+    action="/usergames/<%= usergame._id %>?_method=PUT"
+    method="POST"
+  >
   <section>
     <div>Title: </div>
     <div><%= usergame.title %></div>
@@ -13,7 +18,7 @@
     <div>Completed? </div>
     <div><%= usergame.completed ? 'Yea' : 'Nah' %></div>
     <label for="rating-select">Rating</label>
-    <select name="game-rating" id="rating-select" >
+    <select name="usergame-rating" id="rating-select" >
       <option value="<%= usergame.rating %>"><%= usergame.rating %></option>
       <option value="1">1</option>
       <option value="2">2</option>

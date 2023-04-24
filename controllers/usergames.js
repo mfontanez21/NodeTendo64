@@ -16,17 +16,22 @@ function index(req, res) {
 }
 
 function update(req, res) {
-  req.body.completed = !!req.body.completed
-  for (let key in req.body) {
-    if(req.body[key] === "") delete req.body[key]
-  }
-  UserGame.findByIdAndUpdate(req.params.usergameId, req.body, {new: true})
+  UserGame.findById(req.params.usergameId)
   .then(usergame => {
-    res.redirect(`/usergames/${usergame._id}`)
+    if (usergame.owner.equals(req.user.profile._id)) {
+      req.body.completed = !!req.body.completed
+      usergame.updateOne(req.body)
+      .then(()=> {
+        res.redirect(`/usergames/${usergame._id}`)
+        console.log(req.body);
+      })
+    } else {
+      throw new Error('🚫 I cant let you do that Star Fox 🚫')
+    }
   })
   .catch(err => {
     console.log(err)
-    res.redirect("/")
+    res.redirect(`/usergames`)
   })
 }
 
@@ -82,9 +87,16 @@ function show(req, res) {
 }
 
 function deleteGame(req, res){
-  UserGame.findByIdAndDelete(req.params.gameId)
-  .then(game => {
-    res.redirect('/games')
+  UserGame.findByIdAndDelete(req.params.usergameId)
+  .then(usergame => {
+    if(usergame.owner.equals(req.user.profile._id)) {
+      usergame.deleteOne()
+      .then(()=>{
+        res.redirect('/usergames')
+      })
+    } else {
+      throw new Error('🚫 I cant let you do that Star Fox 🚫')
+  }
   })
   .catch(err => {
     console.log(err)

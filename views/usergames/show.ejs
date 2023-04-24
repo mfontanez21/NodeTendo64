@@ -45,6 +45,9 @@
       </li> 
     <% }) %>
   </ul>
+  <form action="/usergames/<%= usergame._id %>?_method=DELETE" method="POST">
+    <button class="btn" type="submit">Delete Game</button>
+  </form>
   </section>
 </main>
   
