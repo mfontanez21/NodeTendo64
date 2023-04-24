@@ -3,9 +3,9 @@ import { Game } from '../models/game.js'
 
 function index(req, res) {
   UserGame.find({})
-  .then(games => { 
+  .then(usergames => { 
     res.render('usergames/index', {
-      games,
+      usergames,
       title: 'All Your Games'
     })
   })
@@ -235,7 +235,7 @@ function sort(req, res){
       usergames,
       title: 'My Game List',
     })
-  })
+  } )
   .catch(err => {
     console.log(err)
     res.redirect('/usergames')
