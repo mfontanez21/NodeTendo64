@@ -9,6 +9,8 @@ router.get('/', isLoggedIn, userGamesCtrl.index)
 // localhost3000/usergames/new
 router.get('/new', isLoggedIn, userGamesCtrl.new)
 
+router.get('/sort/:sorttype', isLoggedIn, userGamesCtrl.sort)
+
 router.get('/:usergameId', isLoggedIn, userGamesCtrl.show)
 
 router.post('/addGameToList/', isLoggedIn, userGamesCtrl.addGameToList)
@@ -31,7 +33,7 @@ router.put('/:usergameId/comments/:commentId', isLoggedIn, userGamesCtrl.updateC
 
 router.delete('/:usergameId/comments/:commentId', isLoggedIn, userGamesCtrl.deleteComment)
 
-router.get('/', isLoggedIn, userGamesCtrl.sort)
+
 
 
 

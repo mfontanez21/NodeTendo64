@@ -229,10 +229,11 @@ function deleteComment(req,res){
 
 function sort(req, res){
   UserGame.find({})
+  .sort(req.params.sorttype)
   .then(usergames => {
-    res.render('/usergames/index', {
-      usergames: UserGame.model.sort({title: 1}),
-      title: 'My Game List'
+    res.render('usergames/index', {
+      usergames,
+      title: 'My Game List',
     })
   })
   .catch(err => {

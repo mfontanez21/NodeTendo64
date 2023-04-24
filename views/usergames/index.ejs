@@ -7,23 +7,22 @@
   <table>
     <thead>
       <tr>
-        <th>Title</th>
-        <th>Release Year</th>
-        <th>Rating</th>
+        <th><a href="/usergames/sort/title">Title</a></th>
+        <th><a href="/usergames/sort/releaseYear">Release Year</a></th>
+        <th><a href="/usergames/sort/rating">Rating</a></th>
         <th>Completed?</th>
         <th>Box Art</th>
       </tr>
     </thead>
     <tbody>
-      <% games.forEach(game => { %>
-        <tr class="<%= game.rating  === 10  ? "red" : '' %>">
-          <td><a href="/usergames/">sort</a></td>
-          <td><%= game.title %></td>
-          <td><%= game.releaseYear %></td>
-          <td><%= game.rating %></td>
-          <td><%= game.completed? "Yea" : 'Nah' %></td>
-          <td><img src="../images/gameboxes/<%= game.imgName %>"></td>
-          <td><a href="/usergames/<%= game._id %>">details</a></td>
+      <% usergames.forEach(usergame => { %>
+        <tr class="<%= usergame.rating  === 10  ? "red" : '' %>">
+          <td><%= usergame.title %></td>
+          <td><%= usergame.releaseYear %></td>
+          <td><%= usergame.rating %></td>
+          <td><%= usergame.completed? "Yea" : 'Nah' %></td>
+          <td><img src="/images/gameboxes/<%= usergame.imgName %>"></td>
+          <td><a href="/usergames/<%= usergame._id %>">details</a></td>
         </tr>
       <% }) %>
     </tbody>
