@@ -17,6 +17,7 @@
     <tbody>
       <% games.forEach(game => { %>
         <tr class="<%= game.rating  === 10  ? "red" : '' %>">
+          <td><a href="/usergames/">sort</a></td>
           <td><%= game.title %></td>
           <td><%= game.releaseYear %></td>
           <td><%= game.rating %></td>

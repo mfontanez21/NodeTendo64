@@ -31,6 +31,8 @@ router.put('/:usergameId/comments/:commentId', isLoggedIn, userGamesCtrl.updateC
 
 router.delete('/:usergameId/comments/:commentId', isLoggedIn, userGamesCtrl.deleteComment)
 
+router.get('/', isLoggedIn, userGamesCtrl.sort)
+
 
 
 export {

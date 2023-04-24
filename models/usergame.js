@@ -5,7 +5,11 @@ const Schema = mongoose.Schema
 const commentSchema = new Schema({
   content: String,
   author: {type: Schema.Types.ObjectId, ref: "Profile"},
-})
+}, {
+  timestamps:true
+}
+)
+
 
 const userGameSchema = new Schema({
   owner: {type: Schema.Types.ObjectId, ref: 'Profile'},

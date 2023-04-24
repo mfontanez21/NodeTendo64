@@ -222,9 +222,25 @@ function deleteComment(req,res){
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/games')
+    res.redirect('/usergames')
   })
 }
+
+
+function sort(req, res){
+  UserGame.find({})
+  .then(usergames => {
+    res.render('/usergames/index', {
+      usergames: UserGame.model.sort({title: 1}),
+      title: 'My Game List'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/usergames')
+  })
+}
+
 
 export {
   newUserGame as new,
@@ -239,4 +255,5 @@ export {
   updateComment,
   deleteComment,
   update,
+  sort,
 }
