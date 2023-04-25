@@ -2,9 +2,10 @@ table {
   font-size: 20px;
 }
 
-table thead th {
+table thead tr th {
   padding: 5px;
   border-bottom: 2px solid #424748;
+  min-width: 200px;
 }
 
 table td {
@@ -34,6 +35,9 @@ a {
   color: #01009a;
   text-decoration: none;
   background-image: url(/images/cdown.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -48,4 +52,9 @@ a {
 
 .green{
   color:green
+}
+
+.down{
+  height: 40px;
+  width: 40px;
 }

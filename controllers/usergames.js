@@ -146,7 +146,7 @@ function showComment(req, res) {
     {path: "owner"},
     {path: "comments.author"}
   ])
-  .then(game => {
+  .then(usergame => {
     res.render('usergames/show', {
       title: "show",
       usergame

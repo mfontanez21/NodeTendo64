@@ -7,9 +7,22 @@
   <table>
     <thead>
       <tr> 
-        <th><a img src ="/images/cdown.png" class="<%= type === "title" ? "green" : '' %> " href="/usergames/sort/title">Title</a></th>
-        <th><a class="<%= type === "releaseYear" ? "green" : '' %>" href="/usergames/sort/releaseYear">Release Year</a></th>
-        <th><a class="<%= type === "rating" ? "green" : '' %>" href="/usergames/sort/rating">Rating</a></th>
+        <th><a class="<%= type === "title" ? "green" : '' %> " href="/usergames/sort/title">Title 
+          <%  if (type === "title") {%> 
+          <img src="/images/cdown.png" class="down"> 
+          <% } %>
+        </a></th>
+        <th><a class="<%= type === "releaseYear" ? "green" : '' %>" href="/usergames/sort/releaseYear">Release Year
+          <%  if (type === "releaseYear") {%> 
+            <img src="/images/cdown.png" class="down"> 
+            <% } %>
+        </a></th>
+        <th><a class="<%= type === "rating" ? "green" : '' %>" href="/usergames/sort/rating">Rating
+        <%  if (type === "rating") {%> 
+          <img src="/images/cdown.png" class="down"> 
+          <% } %>
+        </a></th>
+
         <th>Completed?</th>
         <th>Box Art</th>
       </tr>
