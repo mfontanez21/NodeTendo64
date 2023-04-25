@@ -103,7 +103,7 @@ function deleteGame(req, res){
   })
   .catch(err => {
     console.log(err)
-    res.redirect("/games")
+    res.redirect("/usergames")
   })
 }
 
@@ -177,7 +177,7 @@ function editComment(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/games')
+    res.redirect('/usergames')
   })
 }
 
@@ -217,7 +217,7 @@ function deleteComment(req,res){
       })
       .catch(err => {
         console.log(err)
-        res.redirect('/games')
+        res.redirect('/usergames')
       })
     } else {
       throw new Error('🚫 I cant let you do that Star Fox 🚫')

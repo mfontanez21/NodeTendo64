@@ -14,8 +14,7 @@ html {
 }
 
 body {
-  background-color: #333333;
-  /* Use a system font, if none are available use an available sans-sarif font */
+  background-color: black;
   margin: 0;
   color: #f5b201;
   min-height: 100vh;
@@ -36,17 +35,15 @@ body > main {
   padding: 20px;
 }
 
-body > main h1:first-child {
-  margin-bottom: 50px;
-}
+
 
 body > nav {
-  grid-area: nav;;
+  grid-area: nav;
   background-color: #989898;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 20px 0 30px;
+  padding: 0 0px 0 0px;
 }
 
 nav > i {
