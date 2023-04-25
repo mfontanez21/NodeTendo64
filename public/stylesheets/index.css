@@ -30,10 +30,22 @@ table td {
   color: #424748;
 }
 
+a {
+  color: #01009a;
+  text-decoration: none;
+  background-image: url(/images/cdown.png);
+}
+
+
+
 #list a:hover {
   background-color: white;
 }
 
 .red {
   color: red
+}
+
+.green{
+  color:green
 }

@@ -6,7 +6,8 @@ function index(req, res) {
   .then(usergames => { 
     res.render('usergames/index', {
       usergames,
-      title: 'All Your Games'
+      title: 'All Your Games',
+      type: req.params.sorttype
     })
   })
   .catch(error => { 
@@ -234,6 +235,7 @@ function sort(req, res){
     res.render('usergames/index', {
       usergames,
       title: 'My Game List',
+      type: req.params.sorttype 
     })
   } )
   .catch(err => {
