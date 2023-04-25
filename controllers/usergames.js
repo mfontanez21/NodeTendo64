@@ -67,8 +67,10 @@ function addGameToList(req, res) {
     .then(usergame =>{
       res.redirect('/usergames/')
     })
-    console.log(req.body);
-    console.log();
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
   })
 }
 

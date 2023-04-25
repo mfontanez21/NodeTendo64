@@ -7,8 +7,8 @@ const commentSchema = new Schema({
   author: {type: Schema.Types.ObjectId, ref: "Profile"},
 }, {
   timestamps:true
-}
-)
+})
+
 
 
 const userGameSchema = new Schema({

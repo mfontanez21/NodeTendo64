@@ -1,10 +1,27 @@
   <% if (!user) { %>
     <script defer src="https://accounts.google.com/gsi/client"></script>
   <% } %>
-</head>
+  </head>
 <body>
   <nav>
+    <a 
+    href="/usergames/new" class=<%= title === 'Add Game' ? 'active' : '' %>
+    >
+      add game
     <i class="fas fa-gamepad-alt"></i>
+    
+  
+  <body>
+    <a 
+      href="/games/" class=<%= title === 'All Games' ? 'active' : '' %>
+    >
+      all games 
+    </a>
+      <a 
+        href="/usergames/" class=<%= title === 'Your Games' ? 'active' : '' %>
+    >
+      your games 
+    </a>
     <% if (user) { %>
       <a href="/auth/logout" class="right">
         <button type="submit">Logout</button>
@@ -27,21 +44,4 @@
         data-logo_alignment="left"
       ></div>
     <% } %>
-  </head>
-  <body>
-      <a 
-        href="/usergames/new" class=<%= title === 'Add Game' ? 'active' : '' %>
-      >
-        add game
-      <a 
-        href="/games/" class=<%= title === 'All Games' ? 'active' : '' %>
-      >
-        all games 
-      </a>
-      
-      <a 
-      href="/usergames/" class=<%= title === 'Your Games' ? 'active' : '' %>
-    >
-      your games 
-    </a>
   </nav>
