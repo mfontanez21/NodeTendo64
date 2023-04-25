@@ -2,7 +2,7 @@ import { UserGame } from '../models/usergame.js'
 import { Game } from '../models/game.js'
 
 function index(req, res) {
-  UserGame.find({})
+  UserGame.find({owner: req.user.profile._id})
   .then(usergames => { 
     res.render('usergames/index', {
       usergames,
