@@ -229,7 +229,7 @@ function deleteComment(req,res){
 
 
 function sort(req, res){
-  UserGame.find({})
+  UserGame.find({owner: req.user.profile._id})
   .sort(req.params.sorttype)
   .then(usergames => {
     res.render('usergames/index', {
