@@ -5,7 +5,7 @@ ul {
 }
 
 li {
-  font-weight: bold;
+  display: flex;
 }
 
 table {
@@ -28,8 +28,8 @@ form * {
 }
 
 section {
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
+  flex-direction: column;
   grid-gap: 16px;
 }
 

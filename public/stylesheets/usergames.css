@@ -2,19 +2,17 @@ html {
   box-sizing: border-box
 }
 
-/* The Universal Selector */
-*, /* All elements*/
-*::before, /* All ::before pseudo-elements */
-*::after { /* All ::after pseudo-elements */
-  /* height & width will now include border & padding by default
-     but can be over-ridden as needed */
+
+*, 
+*::before, 
+*::after { 
   box-sizing: inherit;
   font-family: 'Press Start 2P', cursive;
 
 }
 
 body {
-  background-color: black;
+  background-color: #333333;
   margin: 0;
   color: #f5b201;
   min-height: 100vh;
@@ -27,7 +25,6 @@ body {
 }
 
 body > main {
-  background-image: url('/public/images/90668.jpg');
   grid-area: main;
   display: flex;
   flex-direction: column;
@@ -65,17 +62,15 @@ nav > a:visited {
 }
 
 nav > a:hover {
-  color: white;
-  background-color: #424748;
+  color: #069330;
+  background-color: black;
 }
 
 nav > a.active {
-  color:#01009a;
+  color: #FC0321;
 }
 
-.fas::before {
-  font-family: "Font Awesome 5 Free";
-}
+
 
 #landing-container {
   flex-direction: column;

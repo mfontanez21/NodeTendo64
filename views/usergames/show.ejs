@@ -17,33 +17,32 @@
       <a href="/usergames/<%= usergame._id %>/edit">
         <button class="btn">Edit this Game</button>
       </a>
-    <% } %>
     <form action="/usergames/<%= usergame._id %>?_method=DELETE" method="POST">
       <button class="btn" type="submit">Delete Game</button>
     </form>
-  <% if (user) { %>
-    <h3>Add comment</h3>
+    <% } %>
+  <% if (usergame.owner.equals(user?.profile._id)) { %>
     <h2>Comments</h2>
     <form action="/usergames/<%= usergame._id %>/comments" method="POST">
-      <textarea name="content"></textarea><br>
+      <textarea name="content" type="text" placeholder="add comment here..."></textarea><br>
       <button>Save</button>
     </form>
   <% } %>
   <ul>
-    <% usergame.comments?.forEach(comment => { %>
+    <% usergame.comments.forEach(comment => { %>
       <li>
         <%= comment.content %> 
         <% if (comment.author.equals(user?.profile._id)) { %>
-          <form
-            action="/usergames/<%= usergame._id  %>/comments/<%= comment._id %>?_method=DELETE"
-            METHOD="POST"
-            class="inline"
-          >
-            <button class="btn" type="submit">Delete Comment</button>
-        </form>
           <a href="/usergames/<%= usergame._id %>/comments/<%= comment._id %>/edit">
-            <button class="btn">Edit Comment</button>
+            <button class="btn">Edit</button>
           </a>
+        <form
+          action="/usergames/<%= usergame._id  %>/comments/<%= comment._id %>?_method=DELETE"
+          METHOD="POST"
+          class="inline"
+        >
+          <button class="btn" type="submit">Delete</button>
+        </form>
         <% } %>
       </li> 
     <% }) %>

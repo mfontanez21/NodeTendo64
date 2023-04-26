@@ -7,8 +7,6 @@ const gameSchema = new Schema ({
   title: { type: String, required: true},
   releaseYear: { type: Number, required: true, min: 1996, max: 2002},
   imgName: String,
-}, {
-  timestamps: true
 })
 
 const Game = mongoose.model('Game', gameSchema)

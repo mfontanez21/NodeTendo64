@@ -20,8 +20,6 @@ const userGameSchema = new Schema({
   completed: Boolean,
   comments: [commentSchema],
   game: {type: Schema.Types.ObjectId, ref: "Game"},
-}, {
-  timestamps: true
 })
 
 const UserGame = mongoose.model('UserGame', userGameSchema)
