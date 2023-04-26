@@ -3,10 +3,9 @@ table {
 }
 
 table thead tr th {
-  padding: 5px;
+  padding: 10px;
   border-bottom: 2px solid #424748;
   min-width: 200px;
-  text-align: left;
 }
 
 table td {
@@ -33,7 +32,7 @@ table td {
 }
 
 a {
-  color: #01009a;
+  color: green;
   text-decoration: none;
   background-image: url(/images/cdown.png);
   display: flex;
@@ -52,7 +51,7 @@ a {
 }
 
 .green{
-  color:green
+  color:white
 }
 
 .down{
