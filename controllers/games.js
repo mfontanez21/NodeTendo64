@@ -7,18 +7,6 @@ function newGame(req, res){
   })
 }
 
-// function create(req, res){
-//   req.body.owner = req.user.profile._id
-//   req.body.completed = !!req.body.completed
-//   Game.create(req.body)
-//   .then(game =>{
-//     res.redirect('/games/')
-//   })
-//   .catch(err =>{
-//     console.log(err)
-//     res.redirect('/games/')
-//   })
-// }
 
 function index(req, res) {
   Game.find({})

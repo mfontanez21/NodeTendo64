@@ -1,7 +1,5 @@
 <%- include('./partials/html-head') %>
-<% if (!user) { %>
-  <script defer src="https://accounts.google.com/gsi/client"></script>
-<% } %>
+<%- include('./partials/nav') %>
 
 <main id="landing-container">
   <% if (!user) { %>
