@@ -2,7 +2,6 @@ html {
   box-sizing: border-box;
 }
 
-
 *, 
 *::before, 
 *::after {
@@ -10,7 +9,7 @@ html {
 }
 
 body {
-  background-color: charcoalgre;
+  background-color: #333333;
   color: #f6f6f6;
   margin: 0;
 }

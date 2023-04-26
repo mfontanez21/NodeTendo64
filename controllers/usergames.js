@@ -110,10 +110,14 @@ function deleteGame(req, res){
 function edit(req, res){
   UserGame.findById(req.params.usergameId)
   .then(usergame =>{
-    res.render('usergames/edit', {
-      usergame,
-      title: 'edit game'
-    })
+    if(usergame.owner.equals(req.user.profile._id)) {
+      res.render('usergames/edit', {
+        usergame,
+        title: 'edit game'
+      })
+    } else {
+      throw new Error('🚫 I cant let you do that Star Fox 🚫')
+    }
   })
   .catch(err => {
     console.log(err)
@@ -163,7 +167,6 @@ function showComment(req, res) {
 function editComment(req, res) {
   UserGame.findById(req.params.usergameId)
   .then(usergame => {
-    console.log(req.params.gameId);
     const comment = usergame.comments.id(req.params.commentId)
     if (comment.author.equals(req.user.profile._id)) {
       res.render('usergames/editComment', {
