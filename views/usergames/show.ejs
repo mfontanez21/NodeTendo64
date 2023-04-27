@@ -17,7 +17,7 @@
     <div><%= usergame.completed ? 'Yea' : 'Nah' %></div>
     <% if (usergame.owner.equals(user?.profile._id)) { %>
       <a href="/usergames/<%= usergame._id %>/edit">
-        <button class="btn">Edit this Game</button>
+        <button class="btn" >Edit this Game</button>
       </a>
     <form action="/usergames/<%= usergame._id %>?_method=DELETE" method="POST">
       <button class="btn" type="submit">Delete Game</button>
@@ -27,7 +27,7 @@
     <h2>Comments</h2>
     <form action="/usergames/<%= usergame._id %>/comments" method="POST">
       <textarea name="content" type="text" placeholder="add comment here..."></textarea><br>
-      <button>Save</button>
+      <button class="btn">Save</button>
     </form>
   <% } %>
   <ul>
@@ -36,14 +36,14 @@
         <%= comment.content %> 
         <% if (comment.author.equals(user?.profile._id)) { %>
           <a href="/usergames/<%= usergame._id %>/comments/<%= comment._id %>/edit">
-            <button class="btn">Edit</button>
+            <button class="btn1" >Edit</button>
           </a>
         <form
           action="/usergames/<%= usergame._id  %>/comments/<%= comment._id %>?_method=DELETE"
           METHOD="POST"
           class="inline"
         >
-          <button class="btn" type="submit">Delete</button>
+          <button class="btn2" type="submit">Delete</button>
         </form>
         <% } %>
       </li> 
