@@ -23,6 +23,7 @@ The Nintendo 64 (N64) is a home video game console developed by Nintendo. The fo
 - Express
 - MongoDB
 - Mongoose
+- Google OAuth
 
 ## Credits:
 

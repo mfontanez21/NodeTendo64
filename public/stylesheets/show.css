@@ -6,6 +6,7 @@ ul {
 
 li {
   display: flex;
+  padding: 10px;
 }
 
 table {
@@ -93,7 +94,7 @@ section div:nth-child(even) {
     color: black;
     cursor: pointer;
     display: inline-flex;
-    height: 36px;
+    height: 18px;
     justify-content: center;
     line-height: 1;
     list-style: none;
@@ -124,7 +125,7 @@ section div:nth-child(even) {
     color: red;
     cursor: pointer;
     display: inline-flex;
-    height: 36px;
+    height: 18px;
     justify-content: center;
     line-height: 1;
     list-style: none;
@@ -155,7 +156,7 @@ section div:nth-child(even) {
     color: black;
     cursor: pointer;
     display: inline-flex;
-    height: 36px;
+    height: 18px;
     justify-content: center;
     line-height: 1;
     list-style: none;
