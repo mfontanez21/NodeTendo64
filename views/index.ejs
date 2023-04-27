@@ -1,29 +1,28 @@
-<%- include('./partials/html-head') %>
-<% if (!user) { %>
-  <script defer src="https://accounts.google.com/gsi/client"></script>
+<%- include('./partials/html-head') %> <% if (!user) { %>
+<script defer src="https://accounts.google.com/gsi/client"></script>
 <% } %>
 
 <main id="landing-container">
   <% if (!user) { %>
-    <h1>Log in to start!</h1>
-    <div 
-      id="g_id_onload"
-      data-client_id="<%= googleClientID %>"
-      data-login_uri="/auth/google"
-      data-auto_prompt="false"
-      data-prompt_parent_id="g_id_onload"
-    ></div>
-    <div 
-      class="g_id_signin"
-      data-type="standard"
-      data-size="large"
-      data-theme="outline"
-      data-text="sign_in_with"
-      data-shape="rectangular"
-      data-logo_alignment="left"
-    ></div>
+  <h1>Log in to start!</h1>
+  <div
+    id="g_id_onload"
+    data-client_id="<%= googleClientID %>"
+    data-login_uri="/auth/google"
+    data-auto_prompt="false"
+    data-prompt_parent_id="g_id_onload"
+  ></div>
+  <div
+    class="g_id_signin"
+    data-type="standard"
+    data-size="large"
+    data-theme="outline"
+    data-text="sign_in_with"
+    data-shape="rectangular"
+    data-logo_alignment="left"
+  ></div>
   <% } else { %>
-    <h1>Hello</h1>
+  <h1>Hello</h1>
 
   <% } %>
 </main>

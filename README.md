@@ -27,6 +27,7 @@ The Nintendo 64 (N64) is a home video game console developed by Nintendo. The fo
 ## Credits:
 
 - Arcade Artwork (https://www.arcadeartwork.org/) for the box art images and game titles
+- Crooked Cartridge Pixel Art (https://www.deviantart.com/crookedcartridge) for the N64 game change gif
 
 
 

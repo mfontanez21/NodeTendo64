@@ -3,18 +3,18 @@
 <%- include('../partials/nav') %>
 
 <main>
-	<h1><%= title %></h1>
-  <h2>Choose a game from the list to add</h2>
+  <h1><%= title %></h1>
+  <h2>choose a game to add to your game list</h2>
   <form id="add-game-to-list" action="/usergames/addGameToList" method="POST">
     <select name="game">
       <% games.forEach(game => { %>
-        <option value="<%= game._id %>"><%= game.title %></option>
+      <option value="<%= game._id %>"><%= game.title %></option>
       <% }) %>
     </select>
     <button type="submit">Add Game</button>
   </form>
 
-  <img src="/images/gamechange.gif" class="gif">
+  <img src="/images/gamechange.gif" class="gif" />
 </main>
 
 <%- include('../partials/footer') %>

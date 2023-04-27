@@ -84,4 +84,7 @@ nav > a.active {
   height: 300px;
   width: 300px;
   margin-top: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
