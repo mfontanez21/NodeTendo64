@@ -70,13 +70,13 @@ nav > a.active {
 }
 
 
-
 #landing-container {
   flex-direction: column;
   align-items: center;
-  background-image: url(../images/90668.jpg);
+  background-image: url(../images/welcome.png);
   background-position: center;
-  background-size: cover;
+  background-size: 50%;
+  background-repeat: no-repeat;
   font-size: 16px;
 }
 
